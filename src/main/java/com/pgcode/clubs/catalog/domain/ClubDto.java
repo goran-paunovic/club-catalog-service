@@ -27,6 +27,6 @@ public class ClubDto implements Serializable {
     String email;
     String description;
 
-    double latitude;
-    double longitude;
+    Double latitude;
+    Double longitude;
 }

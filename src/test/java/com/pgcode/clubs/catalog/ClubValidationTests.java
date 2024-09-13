@@ -27,7 +27,7 @@ class ClubValidationTests {
 
     @Test
     void whenAllFieldsAreCorrectValidationSucceeds() {
-        ClubDto clubDto = new ClubDto( null, "name", null, null, null, null, "Country", null, null, null, null );
+        ClubDto clubDto = new ClubDto( null, "name", null, null, null, null, "Country", null, null, null, null, null );
 
         Set<ConstraintViolation<ClubDto>> violations = validator.validate(clubDto);
         assertThat(violations).isEmpty();
@@ -35,7 +35,7 @@ class ClubValidationTests {
 
     @Test
     void whenTitleIsBlankValidationFails() {
-        ClubDto clubDto = new ClubDto( null, null, null, null, null, null, "Country", null, null, null, null );
+        ClubDto clubDto = new ClubDto( null, null, null, null, null, null, "Country", null, null, null, null, null );
 
         Set<ConstraintViolation<ClubDto>> violations = validator.validate(clubDto);
         assertThat(violations).hasSize(1);

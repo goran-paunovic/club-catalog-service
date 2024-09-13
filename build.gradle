@@ -2,6 +2,7 @@ plugins {
     id 'java'
     id 'org.springframework.boot' version '3.3.2'
     id 'io.spring.dependency-management' version '1.1.6'
+    id 'org.springdoc.openapi-gradle-plugin' version '1.9.0'
 }
 
 group = 'com.pgcode.clubs'
@@ -45,8 +46,7 @@ dependencies {
     implementation "org.flywaydb:flyway-core:${flywayVersion}"
     runtimeOnly "org.flywaydb:flyway-database-postgresql:${flywayVersion}"
 
-    implementation 'org.springframework.boot:spring-boot-starter-oauth2-client'
-    testImplementation 'org.springframework.security:spring-security-test'
+    implementation 'org.springdoc:springdoc-openapi-starter-webmvc-ui:2.6.0'
 
     annotationProcessor 'org.springframework.boot:spring-boot-configuration-processor'
 
@@ -86,4 +86,8 @@ bootBuildImage {
             url = project.findProperty("registryUrl")
         }
     }
+}
+
+openApi {
+    apiDocsUrl.set("http://localhost:9001/v3/api-docs")
 }

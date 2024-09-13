@@ -14,8 +14,8 @@ class CatalogApplicationTests {
     @Autowired
     private WebTestClient webTestClient;
 
-//    @Test
-//    void contextLoads() { }
+    @Test
+    void contextLoads() { }
 
 //    @Test
 //    void whenPostRequestThenClubCreated() {
